@@ -1,157 +1,178 @@
 # DataOps & MLOps-Ready Data Pipeline for HR Analytics
 
-**From raw and inconsistent data to production-ready analytical assets**
+**De dados brutos inconsistentes a ativos analíticos confiáveis, escaláveis e prontos para produção**
 
 ---
 
-## 🔎 Overview
+## 🔎 Visão Geral
 
-This repository presents the construction of a **DataOps pipeline for data preprocessing, validation, and preparation**, applied to a **Human Resources and psychometric assessment** context.
+Este repositório apresenta a construção de um **pipeline de DataOps para pré-processamento, validação e preparação de dados**, aplicado a um contexto de **Recursos Humanos e avaliação psicotécnica**.
 
-The project focuses on **data quality, traceability, and reproducibility**, serving as a **trusted foundation** for the full analytical spectrum:
+O projeto tem como foco **qualidade de dados, rastreabilidade e reprodutibilidade**, servindo como **fundação confiável** para todo o espectro analítico:
 
-- Descriptive  
-- Diagnostic  
-- Predictive  
-- Prescriptive  
+- Descritivo  
+- Diagnóstico  
+- Preditivo  
+- Prescritivo  
 
-It was intentionally designed as a **strategic DataOps case**, forming the basis for downstream **MLOps workflows**.
+Ele foi concebido intencionalmente como um **case estratégico de DataOps**, formando a base para fluxos posteriores de **MLOps**.
 
-> **Key principle:** Without DataOps, there is no MLOps.
-
----
-
-## 📌 Business Problem
-
-Organizations frequently face **structural data quality issues** in HR datasets:
-
-| Issue | Business Impact |
-|-----|-----------------|
-| Missing values | Biased indicators |
-| Duplicate records | Distorted aggregates |
-| Invalid values (e.g. negative salary) | Incorrect KPIs |
-| No schema validation | Silent failures |
-
-These issues **invalidate analyses**, compromise **predictive modeling**, and undermine **causal inference**.
-
-**Core question:**
-
-> *How can raw and inconsistent data be transformed into a reliable, scalable, and production-ready analytical asset?*
+> **Princípio-chave:** sem DataOps, não existe MLOps.
 
 ---
 
-## 🎯 Objectives
+## 📌 Problema de Negócio
 
-- Build a **DataOps pipeline** for data validation and treatment  
-- Guarantee **data quality, consistency, and traceability**  
-- Prepare datasets for:
-  - descriptive and diagnostic analytics
-  - predictive modeling
-  - causal inference
-- Deliver **production-ready data artifacts**
+Organizações frequentemente enfrentam **problemas estruturais de qualidade de dados** em bases de RH:
 
----
+| Problema | Impacto no Negócio |
+|--------|-------------------|
+| Valores ausentes | Indicadores enviesados |
+| Registros duplicados | Agregações distorcidas |
+| Valores inválidos (ex.: salário negativo) | KPIs incorretos |
+| Ausência de validação de schema | Falhas silenciosas |
 
-## 🔍 Methodological Approach
+Esses problemas **inviabilizam análises confiáveis**, comprometem **modelagens preditivas** e enfraquecem **inferências causais**.
 
-The project explicitly covers the **end-to-end analytical lifecycle**.
+**Pergunta central do projeto:**
 
-### 1️⃣ Exploratory Data Analysis (EDA)
-- Distribution inspection
-- Outlier and inconsistency detection
-- Impact analysis on business indicators
-
-### 2️⃣ Data Quality Validation (DataOps)
-Explicit **data quality gates**:
-
-- Salary ≥ 0  
-- Age within plausible range  
-- No duplicate records  
-- Controlled missing rate  
-- Schema and data type validation  
-
-### 3️⃣ Data Cleaning & Treatment
-- Correction or removal of invalid values  
-- Deduplication  
-- Context-aware imputation strategies  
-
-### 4️⃣ Feature Readiness
-- Final dataset structured and versioned  
-- Features ready for modeling  
-- Suitable foundation for predictive and causal analyses  
+> *Como transformar dados brutos e inconsistentes em um ativo analítico confiável, escalável e pronto para produção?*
 
 ---
 
-## 🛠 Tools & Technologies
+## 📚 Contexto & Fontes
 
-### Data & Analysis
+Este projeto é fundamentado em um **problema de negócio formalmente definido**, acompanhado de dados e artefatos analíticos que garantem **rastreabilidade** entre o contexto, os dados observados e as decisões técnicas adotadas.
+
+As principais fontes que sustentam o case são:
+
+- **Definição do Problema de Negócio (Projeto 2 – Data Science Academy)**  
+  Documento que estabelece o contexto de Recursos Humanos, o uso de um teste psicotécnico e o objetivo explícito de **pré-processar dados com problemas de qualidade** para viabilizar análises confiáveis.
+
+- **Dataset de Funcionários (dados fictícios)**  
+  Base contendo variáveis como idade, gênero, escolaridade, salário e score psicotécnico, utilizada como insumo do pipeline.  
+  O dataset apresenta **problemas reais de qualidade**, como valores ausentes, registros duplicados e valores inválidos, que motivam diretamente a aplicação de práticas de DataOps.
+
+- **Notebook de Análise Exploratória e Tratamento**  
+  Artefato que documenta o processo de **EDA**, a identificação dos problemas de dados, as decisões de tratamento e o impacto das correções.  
+  O notebook funciona como **trilha de auditoria analítica**, conectando exploração, decisão e operacionalização.
+
+Esses artefatos asseguram que o pipeline apresentado neste repositório não é abstrato ou genérico, mas sim a **operacionalização direta de um problema realista**, com dados, decisões e entregáveis alinhados ao contexto de negócio.
+
+---
+
+## 🎯 Objetivos
+
+- Construir um **pipeline de DataOps** para validação e tratamento de dados  
+- Garantir **qualidade, consistência e rastreabilidade**  
+- Preparar datasets para:
+  - análises descritivas e diagnósticas  
+  - modelagem preditiva  
+  - inferência causal  
+- Entregar **artefatos de dados prontos para produção**
+
+---
+
+## 🔍 Abordagem Metodológica
+
+O projeto cobre explicitamente o **ciclo analítico de ponta a ponta**.
+
+### 1️⃣ Análise Exploratória de Dados (EDA)
+- Inspeção de distribuições  
+- Detecção de outliers e inconsistências  
+- Avaliação de impacto nos indicadores de negócio  
+
+### 2️⃣ Validação de Qualidade de Dados (DataOps)
+Definição de **data quality gates explícitos**:
+
+- Salário ≥ 0  
+- Idade dentro de faixa plausível  
+- Ausência de registros duplicados  
+- Taxa de valores ausentes controlada  
+- Validação de schema e tipos de dados  
+
+### 3️⃣ Limpeza e Tratamento
+- Correção ou remoção de valores inválidos  
+- Deduplicação  
+- Estratégias de imputação orientadas por contexto  
+
+### 4️⃣ Preparação para Modelagem
+- Dataset final estruturado e versionado  
+- Features prontas para consumo por modelos  
+- Base adequada para análises preditivas e causais  
+
+---
+
+## 🛠 Ferramentas e Tecnologias
+
+### Dados & Análise
 - Python  
 - Pandas, NumPy  
 - Jupyter Notebook  
 
-### Data Engineering / DataOps
-- Modular pipeline (`src/`)  
-- Raw vs processed data separation  
-- Artifact versioning  
-- Explicit validation rules  
+### Engenharia de Dados / DataOps
+- Pipeline modular (`src/`)  
+- Separação entre dados brutos e processados  
+- Versionamento de artefatos  
+- Regras explícitas de validação  
 
-### MLOps Foundation
-- Reproducible pipeline  
-- Model-ready data artifacts  
-- Compatible with:
+### Fundação para MLOps
+- Pipeline reprodutível  
+- Artefatos prontos para modelagem  
+- Compatibilidade com:
   - MLflow  
   - Feature Stores  
-  - CI/CD pipelines  
+  - CI/CD  
 
 ---
 
-## 🧠 Technical Rationale
+## 🧠 Justificativa Técnica
 
-| Decision | Rationale |
-|--------|----------|
-| Modular pipeline | Scalability, testing, automation |
-| Explicit quality rules | Prevent silent production failures |
-| Raw/processed separation | Core DataOps principle |
-| Data versioning | Reproducibility and auditability |
-| Notebook + code | Balance exploration and engineering |
+| Decisão | Justificativa |
+|-------|---------------|
+| Pipeline modular | Escalabilidade, testes e automação |
+| Regras explícitas de qualidade | Prevenção de falhas silenciosas |
+| Separação raw/processed | Princípio central de DataOps |
+| Versionamento de dados | Reprodutibilidade e auditoria |
+| Notebook + código | Equilíbrio entre exploração e engenharia |
 
-These choices reflect a **production-first mindset**, not exploratory analysis only.
+Essas escolhas refletem uma **mentalidade orientada à produção**, não apenas à análise exploratória.
 
 ---
 
-## 📦 Final Deliverables
+## 📦 Entregáveis Finais
 
 - `data/processed/dataset_clean_v1.csv`  
-  - validated, production-ready dataset  
-- Reproducible preprocessing pipeline  
-- Analytical report with:
-  - identified issues
-  - decisions taken
-  - impact of corrections  
+  - dataset validado e pronto para análises e modelos  
+- Pipeline de pré-processamento reprodutível  
+- Relatório analítico com:
+  - problemas identificados  
+  - decisões tomadas  
+  - impacto das correções  
 
 ---
 
-## 📊 Actionable Insights
+## 📊 Insights Acionáveis
 
-- HR data without validation leads to **biased decision-making**
-- Invalid values significantly distort aggregates
-- **Data quality is a prerequisite** for:
-  - reliable predictive models
-  - valid causal inference
-  - strategic decision-making  
+- Dados de RH sem validação levam a **decisões enviesadas**  
+- Valores inválidos distorcem métricas e agregações  
+- **Qualidade de dados é pré-requisito** para:
+  - modelos preditivos confiáveis  
+  - inferência causal válida  
+  - decisões estratégicas  
 
-> **Insight:** DataOps enables MLOps. Not the other way around.
+> **Insight:** DataOps viabiliza MLOps — não o contrário.
 
 ---
 
-## 🚀 Delivery & Deployment Readiness
+## 🚀 Prontidão para Entrega e Deploy
 
-Although executed locally, the project was structured as **production-ready**.
+Embora executado localmente, o projeto foi estruturado como **pronto para produção**.
 
-### Data Zones
+### Zonas de Dados
 
 ```text
-data/raw        → raw input data
-data/processed  → validated and versioned datasets
-src/            → reusable pipeline logic
-artifacts/      → model-ready assets
+data/raw        → dados brutos
+data/processed  → dados validados e versionados
+src/            → lógica reutilizável do pipeline
+artifacts/      → ativos prontos para modelagem
