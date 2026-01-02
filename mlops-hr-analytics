@@ -1,0 +1,28 @@
+## 🔧 Model Delivery & Consumption
+
+Este repositório entrega o modelo como um **serviço reutilizável e pronto para produção**, seguindo práticas de MLOps.
+
+### 📦 Empacotamento do Modelo
+
+Após o treinamento, o modelo é:
+
+- Versionado como artefato (`models/latest.joblib`)
+- Registrado via **MLflow** com:
+  - parâmetros
+  - métricas
+  - artefatos
+- Preparado para consumo via **API**
+
+Esse processo garante **reprodutibilidade, auditoria e rollback**.
+
+---
+
+### 🚀 Forma de Entrega
+
+O modelo é disponibilizado como um **serviço REST**, exposto via **FastAPI** e containerizado com **Docker**.
+
+**Endpoints disponíveis:**
+
+```http
+GET  /health     # verificação de status do serviço
+POST /predict    # inferência online
