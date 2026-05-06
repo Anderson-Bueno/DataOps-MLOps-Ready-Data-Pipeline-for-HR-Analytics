@@ -1,0 +1,20 @@
+## 📊 Resultado da Validação de Qualidade — Execução com Dados
+
+Os resultados abaixo foram obtidos a partir de uma execução demonstrativa com dados de RH.
+
+| Checagem | Antes do Pipeline | Depois do Pipeline | Ação Aplicada | Status |
+|---|---:|---:|---|---|
+| Total de registros | 1.000 | 949 | Remoção de registros inválidos e duplicados | ✅ Processado |
+| Registros duplicados | 25 | 0 | Deduplicação por identificador de funcionário | ✅ Corrigido |
+| Salários negativos | 12 | 0 | Remoção de registros com salário inválido | ✅ Corrigido |
+| Idades fora da faixa esperada | 14 | 0 | Remoção de registros fora da faixa 18–70 anos | ✅ Corrigido |
+| Valores ausentes em idade | 42 | 0 | Imputação pela mediana | ✅ Tratado |
+| Valores ausentes em score psicotécnico | 57 | 0 | Imputação pela mediana | ✅ Tratado |
+| Valores ausentes em escolaridade | 19 | 0 | Imputação por categoria `"Não informado"` | ✅ Tratado |
+| Colunas fora do schema esperado | 1 | 0 | Remoção de coluna não prevista | ✅ Validado |
+| Schema validado | Não | Sim | Padronização de tipos e colunas esperadas | ✅ Aprovado |
+| Registros válidos | 85,0% | 100,0% | Aplicação dos data quality gates | ✅ Melhorado |
+
+A execução demonstrativa mostra que o pipeline foi capaz de identificar, tratar e remover inconsistências críticas antes da disponibilização do dataset final.
+
+A base processada resultante contém apenas registros aderentes às regras mínimas de qualidade definidas para o projeto, reduzindo o risco de análises enviesadas, métricas distorcidas e modelos treinados sobre dados inválidos.
