@@ -1,0 +1,17 @@
+{
+  "execution_type": "synthetic_demo",
+  "total_rows_raw": 1000,
+  "total_rows_processed": 949,
+  "duplicate_rows_removed": 25,
+  "invalid_salary_rows_removed": 12,
+  "invalid_age_rows_removed": 14,
+  "missing_age_values_treated": 42,
+  "missing_psychometric_score_values_treated": 57,
+  "missing_education_values_treated": 19,
+  "unexpected_columns_removed": 1,
+  "schema_validation_before": "failed",
+  "schema_validation_after": "passed",
+  "valid_records_before_pct": 85.0,
+  "valid_records_after_pct": 100.0,
+  "pipeline_status": "success"
+}
