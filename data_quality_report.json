@@ -1,5 +1,5 @@
 {
-  "execution_type": "synthetic_demo",
+  "execution_type": "demo",
   "total_rows_raw": 1000,
   "total_rows_processed": 949,
   "duplicate_rows_removed": 25,
